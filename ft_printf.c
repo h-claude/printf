@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:08:23 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/13 16:44:39 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:38:05 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
-			count += printf_format(format[i], ap);
+			count += ft_printf_format(format[i], ap);
 		else
 			count += write(1, format[i], 1);
 		i++;
