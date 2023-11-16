@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_format.c                                    :+:      :+:    :+:   */
+/*   ft_printf_format.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:51:06 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/15 16:39:03 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/16 17:23:27 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int ft_printf_format(char c, va_list ap)
 		count += ft_putchar(va_arg(ap, int));
 	else if (c == 's')
 		count += ft_putstr(va_arg(ap, char *));
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i' || c == 'u')
 		count += ft_putnbr(va_arg(ap, int));
 	else if (c == 'p')
 		count += ft_putpointer(va_arg(ap, void *));

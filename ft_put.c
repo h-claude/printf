@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/15 16:35:02 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/16 18:00:38 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,31 @@ int	ft_putpointer(void *p)
 		i--;
 	}
 	return (ft_putstr(txt));
+}
+
+int	ft_hexadecimal(long long int n)
+{
+	if (n == -2147483648)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n * -1, fd);
+	}
+	else
+	{
+		if (n > 9)
+		{
+			ft_putnbr_fd(temp / 10, fd);
+			ft_putnbr_fd(temp % 10, fd);
+		}
+		else
+			ft_putchar_fd('0' + n, fd);
+	}
 }
 
 
