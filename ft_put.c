@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/16 18:00:38 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:58:06 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,67 +47,15 @@ int	ft_putnbr(int nbr)
 	return (len);
 }
 
-int	ft_putpointer(void *p)
-{
-	int				i;
-	char			txt[15];
-	char const		*base;
-	unsigned long	adr;
-
-	if (!p)
-		return (ft_putstr((char *)p));
-	base = "0123456789abcdef";
-	adr = (unsigned long)p;
-	i = 13;
-	txt[14] = 0;
-	while (adr / 16 != 0 || i >= 0)
-	{
-		if (i == 1)
-			txt[i] = 'x';
-		else if (i == 0)
-			txt[i] = '0';
-		else
-			txt[i] = base[(adr % 16)];
-		adr /= 16;
-		i--;
-	}
-	return (ft_putstr(txt));
-}
-
-int	ft_hexadecimal(long long int n)
-{
-	if (n == -2147483648)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		n = 147483648;
-	}
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(n * -1, fd);
-	}
-	else
-	{
-		if (n > 9)
-		{
-			ft_putnbr_fd(temp / 10, fd);
-			ft_putnbr_fd(temp % 10, fd);
-		}
-		else
-			ft_putchar_fd('0' + n, fd);
-	}
-}
-
 
 #include <stdio.h>
 
 int main() {
-//   void *p;
-//   char *str = "test";
-//   p = str;
-//   printf("%p\n", p);
-//   printf("\n");
-//   ft_putpointer(p);
-	printf("%d", 10);
+	int b;
+	b = -65546;
+	ft_hexadecimal(b, 'x');
+	
+	int a = printf("\n%x\n", b);
+	
+	printf("Valeur retour printf : %i", a);
 }
