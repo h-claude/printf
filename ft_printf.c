@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:08:23 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 15:49:19 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 16:33:28 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int ft_printf(const char *format, ...)
 	return (count);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main()
-// {
-// 	printf("Vrai : %x\n", 22);
-// 	ft_printf("Faux : %x", 22);
-// }
+int main()
+{
+	printf("Vrai : %c\n", 'a');
+	ft_printf("Faux : %c\n", 'a');
+}
