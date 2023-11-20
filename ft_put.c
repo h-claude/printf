@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/17 18:58:06 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 13:06:45 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int	ft_putnbr(int nbr)
 }
 
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-	int b;
-	b = -65546;
-	ft_hexadecimal(b, 'x');
+// int main() {
+// 	int b;
+// 	b = -65546;
+// 	ft_hexadecimal(b, 'x');
 	
-	int a = printf("\n%x\n", b);
+// 	int a = printf("\n%x\n", b);
 	
-	printf("Valeur retour printf : %i", a);
-}
+// 	printf("Valeur retour printf : %i", a);
+// }

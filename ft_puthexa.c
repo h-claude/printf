@@ -3,32 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:55:57 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/17 18:56:28 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:42:45 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include <stdio.h>
 
-void	ft_hexadecimal(long long int n, char format)
+static int countdigit(unsigned int n)
 {
-	if (n >= 16)
+	long long int i;
+
+	i = 0;
+	while (n > 0 && i < 8)
 	{
-		ft_hexadecimal(n / 16, format);
-		ft_hexadecimal(n % 16, format);
+		i++;
+		n /= 16;
 	}
+	return (i);
+}
+
+int	ft_hexadecimal(unsigned int n, char format)
+{
+	char const *base;
+	int i;
+	char *tab;
+
+	i = countdigit(n);
+	if (format == 'X')
+		base = "0123456789ABCDEF";
 	else
+		base = "0123456789abcdef";
+	tab = ft_calloc(i + 1, sizeof(char));
+	while (n / 16 != 0 || i >= 0)
 	{
-		if (n < 10)
-			ft_putchar('0' + n);
-		else
-		{
-			if (format == 'X')
-				ft_putchar('A' + (n - 10));
-			else
-				ft_putchar('a' + (n - 10));
-		}
+		tab[i] = base[(n%16)];
+		n /= 16;
+		i--;
 	}
+	i = ft_putstr(tab);
+	// printf("La chaine est : %s i = %d", tab, i);
+	free(tab);
+	return (i);
 }

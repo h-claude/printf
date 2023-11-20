@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:51:06 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/16 17:23:27 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:24:20 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int ft_printf_format(char c, va_list ap)
 		count += ft_putnbr(va_arg(ap, int));
 	else if (c == 'p')
 		count += ft_putpointer(va_arg(ap, void *));
+	else if (c == 'x' || c == 'X')
+		count += ft_hexadecimal(va_arg(ap, int), c);
 	
 
 	return (count);

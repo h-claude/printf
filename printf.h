@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:15:28 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/15 16:37:33 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:29:18 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	ft_putstr(char *str);
 int	ft_putchar(char c);
 int	ft_putnbr(int nbr);
 int	ft_putpointer(void *p);
+int	ft_hexadecimal(unsigned int n, char format);
+
 
 #endif
