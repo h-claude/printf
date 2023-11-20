@@ -6,11 +6,11 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:08:23 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 17:25:57 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 18:39:57 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *format, ...)
 {

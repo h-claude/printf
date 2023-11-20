@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:15:28 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 15:29:18 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 18:31:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int	ft_putchar(char c);
 int	ft_putnbr(int nbr);
 int	ft_putpointer(void *p);
 int	ft_hexadecimal(unsigned int n, char format);
-
 
 #endif
