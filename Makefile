@@ -6,7 +6,7 @@
 #    By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 16:39:32 by hclaude           #+#    #+#              #
-#    Updated: 2023/11/20 17:18:57 by hclaude          ###   ########.fr        #
+#    Updated: 2023/11/20 18:24:01 by hclaude          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,25 +26,18 @@ ft_printf_format.c \
 ft_puthexa.c \
 ft_putpointer.c 
 
-#%.o : %.c
-#	$(CC) $(CFLAGS) -c $< -o $@
-LIBFT_A=libft.a
+LIBFT_A :
+	make -C libft
+	mv libft/*.o .
+	make fclean -C libft
 
-$(LIBFT_A) :
-	cd ./libft
-	make all
-	make clean
-	mv libft.a ../
-	cd ..
-	mv libft.a $(NAME)
+all : $(NAME)
 
-all : $(LIBFT_A)
-
-$(NAME) : $(OBJFILES)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJFILES)
+$(NAME) : LIBFT_A $(OBJFILES)
+	$(AR) $(ARFLAGS) $(NAME) *.o
 
 clean :
-	rm -rf $(OBJFILES)
+	rm -rf *.o
 
 fclean : clean
 	rm -rf $(NAME)
