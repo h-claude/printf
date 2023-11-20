@@ -6,12 +6,11 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:55:57 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 16:23:11 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 17:26:15 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include <stdio.h>
 
 static int countdigit(unsigned int n)
 {
@@ -45,7 +44,6 @@ int	ft_hexadecimal(unsigned int n, char format)
 		i--;
 	}
 	i = ft_putstr(tab);
-	// printf("La chaine est : %s i = %d", tab, i);
 	free(tab);
 	return (i);
 }

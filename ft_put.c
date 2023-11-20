@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 13:06:45 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 17:26:05 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,3 @@ int	ft_putnbr(int nbr)
 	free(txt);
 	return (len);
 }
-
-
-// #include <stdio.h>
-
-// int main() {
-// 	int b;
-// 	b = -65546;
-// 	ft_hexadecimal(b, 'x');
-	
-// 	int a = printf("\n%x\n", b);
-	
-// 	printf("Valeur retour printf : %i", a);
-// }

@@ -6,7 +6,7 @@
 #    By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 16:39:32 by hclaude           #+#    #+#              #
-#    Updated: 2023/11/20 17:02:41 by hclaude          ###   ########.fr        #
+#    Updated: 2023/11/20 17:18:57 by hclaude          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,17 +28,17 @@ ft_putpointer.c
 
 #%.o : %.c
 #	$(CC) $(CFLAGS) -c $< -o $@
+LIBFT_A=libft.a
 
-LIBFT_A:
-	cd libft 
+$(LIBFT_A) :
+	cd ./libft
 	make all
 	make clean
 	mv libft.a ../
 	cd ..
-	$(AR) $(ARFLAGS) $(NAME)
-	mv -t libft.a libftprintf.a
+	mv libft.a $(NAME)
 
-all : $(NAME)
+all : $(LIBFT_A)
 
 $(NAME) : $(OBJFILES)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJFILES)
