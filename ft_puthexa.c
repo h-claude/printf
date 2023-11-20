@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:55:57 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 18:40:06 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/20 19:13:47 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	ft_hexadecimal(unsigned int n, char format)
 	else
 		base = "0123456789abcdef";
 	tab = ft_calloc(i, sizeof(char));
+	if (!tab)
+		return (ft_putstr(NULL));
 	while (n / 16 != 0 || i >= 0)
 	{
 		tab[i] = base[(n%16)];
