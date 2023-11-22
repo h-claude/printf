@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 18:52:06 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/22 14:39:56 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ int	ft_putstr(char *str)
 	int	i;
 
 	if (str == NULL)
-	{
-		ft_putstr("(nil)");
-		return (5);
-	}
+		ft_putstr("(null)");
 	i = 0;
 	while (str[i])
 	{
@@ -42,6 +39,18 @@ int	ft_putnbr(int nbr)
 
 	len = 0;
 	txt = ft_itoa(nbr);
+	len = ft_putstr(txt);
+	free(txt);
+	return (len);
+}
+
+int	ft_putnbr_unsigned(unsigned int nbr)
+{
+	int		len;
+	char	*txt;
+	
+	len = 0;
+	txt = ft_itoa_unsigned(nbr);
 	len = ft_putstr(txt);
 	free(txt);
 	return (len);
