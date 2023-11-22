@@ -47,7 +47,7 @@ int	ft_putnbr_unsigned(unsigned int nbr)
 {
 	int		len;
 	char	*txt;
-	
+
 	len = 0;
 	txt = ft_itoa_unsigned(nbr);
 	len = ft_putstr(txt);

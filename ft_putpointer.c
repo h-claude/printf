@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static int countdigit(unsigned long long n)
+static int	countdigit(unsigned long long n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -29,11 +29,11 @@ static int countdigit(unsigned long long n)
 
 int	ft_putpointer(void *p)
 {
-	int				i;
-	char			*txt;
-	char const		*base;
+	int					i;
+	char				*txt;
+	char const			*base;
 	unsigned long long	adr;
-	
+
 	if (!p)
 		return (ft_putstr("(nil)"));
 	adr = (unsigned long long)p;
@@ -51,7 +51,7 @@ int	ft_putpointer(void *p)
 		txt[i--] = base[(adr % 16)];
 		adr /= 16;
 	}
-	i = ft_putstr(txt)+2;
+	i = ft_putstr(txt) + 2;
 	free(txt);
 	return (i);
 }

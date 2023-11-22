@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list ap;
-	int i;
-	int count;
-	
+	va_list	ap;
+	int		i;
+	int		count;
+
 	va_start(ap, format);
 	i = 0;
 	count = 0;

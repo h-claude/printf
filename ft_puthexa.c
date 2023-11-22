@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static int countdigit(unsigned int n)
+static int	countdigit(unsigned int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -29,9 +29,9 @@ static int countdigit(unsigned int n)
 
 int	ft_hexadecimal(unsigned int n, char format)
 {
-	char const *base;
-	int i;
-	char *tab;
+	char const	*base;
+	int			i;
+	char		*tab;
 
 	i = countdigit(n);
 	if (format == 'X')
@@ -44,7 +44,7 @@ int	ft_hexadecimal(unsigned int n, char format)
 	i--;
 	while (n / 16 >= 0 && i >= 0)
 	{
-		tab[i] = base[(n%16)];
+		tab[i] = base[(n % 16)];
 		n /= 16;
 		i--;
 	}

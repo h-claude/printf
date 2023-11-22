@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int ft_printf_format(char c, va_list ap)
+int	ft_printf_format(char c, va_list ap)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (c == 'c')
