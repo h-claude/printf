@@ -6,13 +6,13 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:58 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/22 14:41:55 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/22 15:36:13 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	countdigit(long int n)
+static int	countdigit_unsigned(long int n)
 {
 	int	i;
 
@@ -54,10 +54,10 @@ char	*ft_itoa_unsigned(unsigned int n)
 
 	i = 0;
 	num = n;
-	count = countdigit(num);
+	count = countdigit_unsigned(num);
 	str = ft_calloc(count + 1, sizeof(char));
 	if (!str)
-		return ft_putstr(NULL);
+		return (NULL);
 	recustr(num, str, count - 1);
 	return (str);
 }

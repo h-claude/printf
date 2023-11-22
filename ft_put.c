@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:29:34 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/22 14:39:56 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/22 16:04:03 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *str)
 {
 	int	i;
 
-	if (str == NULL)
-		ft_putstr("(null)");
+	if (!str)
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (str[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:55:57 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 19:13:47 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/22 15:46:08 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 static int countdigit(unsigned int n)
 {
-	long long int i;
+	int i;
 
 	i = 0;
-	while (n > 0 && i < 8)
+	if (n == 0)
+		return (1);
+	while (n > 0 && i != 8)
 	{
 		i++;
 		n /= 16;
@@ -31,15 +33,16 @@ int	ft_hexadecimal(unsigned int n, char format)
 	int i;
 	char *tab;
 
-	i = countdigit(n)-1;
+	i = countdigit(n);
 	if (format == 'X')
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
-	tab = ft_calloc(i, sizeof(char));
+	tab = ft_calloc(i + 1, sizeof(char));
 	if (!tab)
 		return (ft_putstr(NULL));
-	while (n / 16 != 0 || i >= 0)
+	i--;
+	while (n / 16 >= 0 && i >= 0)
 	{
 		tab[i] = base[(n%16)];
 		n /= 16;

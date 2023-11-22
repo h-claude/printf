@@ -6,35 +6,52 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:57:21 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/20 18:40:09 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/22 16:27:17 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int countdigit(unsigned long long n)
+{
+	int i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0 && i != 16)
+	{
+		i++;
+		n /= 16;
+	}
+	return (i);
+}
+
 int	ft_putpointer(void *p)
 {
 	int				i;
-	char			txt[15];
+	char			*txt;
 	char const		*base;
-	unsigned long	adr;
-
+	unsigned long long	adr;
+	
 	if (!p)
-		return (ft_putstr((char *)p));
+		return (ft_putstr("(nil)"));
+	adr = (unsigned long long)p;
+	txt = ft_calloc(sizeof(char), countdigit(adr) + 1);
+	if (!txt)
+	{
+		free(txt);
+		return (ft_putstr("(nil)"));
+	}
 	base = "0123456789abcdef";
-	adr = (unsigned long)p;
-	i = 13;
-	txt[14] = 0;
+	i = countdigit(adr) - 1;
+	ft_putstr("0x");
 	while (adr / 16 != 0 || i >= 0)
 	{
-		if (i == 1)
-			txt[i] = 'x';
-		else if (i == 0)
-			txt[i] = '0';
-		else
-			txt[i] = base[(adr % 16)];
+		txt[i--] = base[(adr % 16)];
 		adr /= 16;
-		i--;
 	}
-	return (ft_putstr(txt));
+	i = ft_putstr(txt)+2;
+	free(txt);
+	return (i);
 }
