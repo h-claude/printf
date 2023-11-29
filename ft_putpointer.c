@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:57:21 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/22 16:27:17 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:13:36 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_putpointer(void *p)
 	if (!txt)
 	{
 		free(txt);
-		return (ft_putstr("(nil)"));
+		return (ft_putstr("0x0"));
 	}
 	base = "0123456789abcdef";
 	i = countdigit(adr) - 1;
