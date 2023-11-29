@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:15:28 by hclaude           #+#    #+#             */
-/*   Updated: 2023/11/29 17:04:32 by hclaude          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:41:08 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_printf(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
+int		ft_printf(const char *format, ...) \
+__attribute__ ((format(printf, 1, 2)));
 int		ft_printf_format(char c, va_list ap);
 int		ft_putstr(char *str);
 int		ft_putchar(char c);

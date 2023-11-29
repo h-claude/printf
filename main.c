@@ -2,5 +2,5 @@
 
 int main()
 {
-	ft_printf(NULL, NULL);
+	ft_printf("%d %d", 2);
 }
